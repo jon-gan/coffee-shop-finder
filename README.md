@@ -9,10 +9,10 @@ Used with Node.js (v8.7.0) and npm (v5.4.2).
 From the project's root:
 
 `npm install`  
-`npm run-script build`
+`npm run-script build`  
 `npm start`
 
-The application will run on port 3000. For running on a different port, use `PORT=<port number> node dist/index`.
+The application will run on port 3000. For running on a different port, use `PORT=<port number> node dist/index` instead of `npm start`.
 
 # Testing
 
