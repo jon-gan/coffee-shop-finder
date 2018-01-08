@@ -33,7 +33,7 @@ router.get('/coffee-shops/:id', (req, res) => {
 // Update
 router.put('/coffee-shops/:id', (req, res) => {
     try {
-        res.status(201).send(coffeeShops.update(req.params.id,
+        res.status(200).send(coffeeShops.update(req.params.id,
                                                 req.body.name,
                                                 req.body.address,
                                                 req.body.latitude,
