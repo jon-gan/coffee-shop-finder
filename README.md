@@ -1,21 +1,21 @@
-# Coffee Shop Finder
+# Introduction
 
 API for finding the nearest coffee shop, given an address.
 
 Used with Node.js (v8.7.0) and npm (v5.4.2).
 
-## Installation and Running
+# Installation and Running
 
-`./setup.sh`
+`./setup.sh`  
 `./start.sh`
 
 The application will run on port 3000. For running on a different port, use `PORT=<port number> node dist/index`.
 
-## API Calls
+# API Calls
 
 When running locally, the following are prefixed by `http://localhost:<port number>/api/v1`.
 
-### Create
+## Create
 
 Creates a coffee shop.
 
@@ -23,7 +23,7 @@ Creates a coffee shop.
 * **Method:** `POST`
 * **URL Parameters:** (none)
 * **Body Parameters:**
-```javascript
+```
 {
     name: <coffee shop's name>,
     address: <coffee shop's address>,
@@ -32,7 +32,7 @@ Creates a coffee shop.
 }
 ```
 * **Success Response:** `201`
-```javascript
+```
 {
     id: <automatically assigned id>,
     name: <coffee shop's name>,
@@ -42,7 +42,7 @@ Creates a coffee shop.
 }
 ```
 
-### Read
+## Read
 
 Returns JSON data about the specified coffee shop.
 
@@ -51,7 +51,7 @@ Returns JSON data about the specified coffee shop.
 * **URL Parameters:** `id: integer`
 * **Body Parameters:** (none)
 * **Success Response:** `200`
-```javascript
+```
 {
     id: <coffee shop's id>,
     name: <coffee shop's name>,
@@ -62,7 +62,7 @@ Returns JSON data about the specified coffee shop.
 ```
 * **Error Response:** `404`
 
-### Update
+## Update
 
 Updates a coffee shop's data.
 
@@ -70,7 +70,7 @@ Updates a coffee shop's data.
 * **Method:** `PUT`
 * **URL Parameters:** `id: integer`
 * **Body Parameters:**
-```javascript
+```
 {
     id: <coffee shop's id>,
     name: <coffee shop's name>,
@@ -80,7 +80,7 @@ Updates a coffee shop's data.
 }
 ```
 * **Success Response:** `200`
-```javascript
+```
 {
     id: <coffee shop's id>,
     name: <coffee shop's name>,
@@ -91,7 +91,7 @@ Updates a coffee shop's data.
 ```
 * **Error Response:** `404`
 
-### Delete
+## Delete
 
 Deletes a coffee shop.
 
@@ -102,7 +102,7 @@ Deletes a coffee shop.
 * **Success Response:** `204`
 * **Error Response:** `404`
 
-### Find Nearest
+## Find Nearest
 
 Finds the nearest coffee shop to the specified address.
 
@@ -110,13 +110,13 @@ Finds the nearest coffee shop to the specified address.
 * **Method:** `POST`
 * **URL Parameters:** (none)
 * **Body Parameters:**
-```javascript
+```
 {
     address: <target address>
 }
 ```
 * **Success Response:** `200`
-```javascript
+```
 {
     id: <nearest coffee shop's id>,
     name: <nearest coffee shop's name>,
