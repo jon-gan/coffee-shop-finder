@@ -1,8 +1,8 @@
 import * as fs from "fs";
-import * as coffeeShop from "./coffee-shop";
+import { CoffeeShop } from "./coffee-shop";
 
 export class Directory {
-    private listings: { [key: number]: coffeeShop.CoffeeShop } = {};
+    private listings: { [key: number]: CoffeeShop } = {};
     private autoincrement_index = 0;
 
     public importListingsCsv(filepath: string) {
@@ -28,15 +28,15 @@ export class Directory {
         if (id in this.listings) {
             throw new Error("Attempting to import listing with ID that already exists.");
         }
-        this.listings[id] = new coffeeShop.CoffeeShop(id, name, address, latitude, longitude);
+        this.listings[id] = new CoffeeShop(id, name, address, latitude, longitude);
         if (id > this.autoincrement_index) {
             this.autoincrement_index = id + 1;
         }
     }
 
     public add(name: string, address: string,
-               latitude: number, longitude: number): coffeeShop.CoffeeShop {
-        this.listings[this.autoincrement_index] = new coffeeShop.CoffeeShop(this.autoincrement_index,
+               latitude: number, longitude: number): CoffeeShop {
+        this.listings[this.autoincrement_index] = new CoffeeShop(this.autoincrement_index,
                                                                             name,
                                                                             address,
                                                                             latitude,
@@ -44,7 +44,7 @@ export class Directory {
         return this.listings[this.autoincrement_index++];
     }
 
-    public get(id: number): coffeeShop.CoffeeShop {
+    public get(id: number): CoffeeShop {
         if (!(id in this.listings)) {
             throw new Error("ID does not exist.");
         }
@@ -55,7 +55,7 @@ export class Directory {
                   name: string,
                   address: string,
                   latitude: number,
-                  longitude: number): coffeeShop.CoffeeShop {
+                  longitude: number): CoffeeShop {
         if (!(id in this.listings)) {
             throw new Error("ID does not exist.");
         }

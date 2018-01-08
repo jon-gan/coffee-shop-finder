@@ -6,10 +6,17 @@ Used with Node.js (v8.7.0) and npm (v5.4.2).
 
 # Installation and Running
 
-`./setup.sh`  
-`./start.sh`
+From the project's root:
+
+`npm install`  
+`npm run-script build`
+`npm start`
 
 The application will run on port 3000. For running on a different port, use `PORT=<port number> node dist/index`.
+
+# Testing
+
+`npm test`
 
 # API Calls
 

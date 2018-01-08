@@ -3,7 +3,7 @@ import * as express from "express";
 import app from "./app";
 
 const port: number = parseInt(process.env.PORT) || 3000;
-const server = http.createServer(app);
+export const server = http.createServer(app);
 server.listen(port);
 
 server.on("error", (err: NodeJS.ErrnoException) : void => {
